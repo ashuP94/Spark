@@ -10,17 +10,16 @@ import twitter4j.Status
 import org.apache.spark.streaming.twitter.TwitterUtils
 object twitter2 {
   def main(args: Array[String]) {
-    /*if (args.length < 4) {
+    if (args.length < 4) {
       System.err.println("Usage: TwitterData <ConsumerKey><ConsumerSecret><accessToken><accessTokenSecret>" +
         "[<filters>]")
       System.exit(1)
-    }*/
+    }
     val appName = "TwitterData"
     val conf = new SparkConf()
     conf.setAppName(appName).setMaster("local[2]")
     val ssc = new StreamingContext(conf, Seconds(5))
-    val Array(consumerKey, consumerSecret, accessToken, accessTokenSecret) = Array("utNmYpJWnMokAaxH0xYiQ7zCP","Jtpfn9xPueJ1iEW8ZZZy9LAwUjPTdIu4vMzZ5DyS3Kcmop6xUC","283000236-6vVNTEnXfVqbWwfSD0WNxNujp5llDv44R22wYCq7",
-      "WR5Xyo393V2gsx52o4nCOuPr8HUXV495bDrIklCicUhnE")
+    val Array(consumerKey, consumerSecret, accessToken, accessTokenSecret) = args.take(4)
     val filters = args.takeRight(args.length - 4)
     val cb = new ConfigurationBuilder
     cb.setDebugEnabled(true).setOAuthConsumerKey(consumerKey)
