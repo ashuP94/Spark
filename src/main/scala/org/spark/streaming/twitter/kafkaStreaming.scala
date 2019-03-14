@@ -21,10 +21,11 @@ object kafkaStreaming extends App {
     "kafka.consumer.id" -> "kafka-consumer-01"
   )
   val ssc = new StreamingContext(conf, Seconds(10))
+  ssc.sparkContext.setLogLevel("ERROR")
 
   val inputStream = KafkaUtils.createDirectStream(ssc,
     PreferConsistent, Subscribe[String, String](Array(inputTopic), kafkaParams))
-  val processedStream = inputStream.map(record => record.value) //Any operation can be performed here.
+  val processedStream = inputStream.map(record => record.value.toUpperCase) //Any operation can be performed here.
 
   //checking the batches for data
   processedStream.print()

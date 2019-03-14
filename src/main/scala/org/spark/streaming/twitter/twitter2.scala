@@ -19,6 +19,7 @@ object twitter2 {
     val conf = new SparkConf()
     conf.setAppName(appName).setMaster("local[2]")
     val ssc = new StreamingContext(conf, Seconds(5))
+    ssc.sparkContext.setLogLevel("ERROR")
     val Array(consumerKey, consumerSecret, accessToken, accessTokenSecret) = args.take(4)
     val filters = args.takeRight(args.length - 4)
     val cb = new ConfigurationBuilder
@@ -29,7 +30,7 @@ object twitter2 {
     val auth = new OAuthAuthorization(cb.build)
     val tweets = TwitterUtils.createStream(ssc, Some(auth), filters, StorageLevel.MEMORY_AND_DISK_2)
     tweets.print()
-   // tweets .saveAsTextFiles("tweets", "json")
+    tweets .saveAsTextFiles("tweets", "json")
     ssc.start()
     ssc.awaitTermination()
   }

@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sparkstreaming.iml" filepath="$PROJECT_DIR$/.idea/modules/sparkstreaming.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sparkstreaming-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sparkstreaming-build.iml" />
+      <module fileurl="file://C:/.idea/modules/-sources.iml" filepath="C:/.idea/modules/-sources.iml" />
+      <module fileurl="file://C:/.idea/modules/root.iml" filepath="C:/.idea/modules/root.iml" />
+      <module fileurl="file://C:/.idea/modules/root-build.iml" filepath="C:/.idea/modules/root-build.iml" />
+      <module fileurl="file://C:/.idea/modules/shared-sources.iml" filepath="C:/.idea/modules/shared-sources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark.iml" filepath="$PROJECT_DIR$/.idea/modules/spark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-build.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-build.iml" />
     </modules>
   </component>
 </project>
