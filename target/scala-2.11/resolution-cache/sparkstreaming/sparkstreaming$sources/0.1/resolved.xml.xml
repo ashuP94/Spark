@@ -4,7 +4,7 @@
 		module="sparkstreaming$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190314122702"
+		publication="20190315112222"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
